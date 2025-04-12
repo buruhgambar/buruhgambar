@@ -1,34 +1,156 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BURUHGAMBAR</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nama Perusahaan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f4f4f4;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      background: #eaeaea;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      background-color: #1a1a1a;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>BURUH GAMBAR YOGYAKARTA</h1>
-            </nav>
-        </div>
-    </header>
-    
-    <main class="container">
-        <section id="home">
-            <h2>SELAMAT DATANG DI WEBSITE BURUH GAMBAR YANG BIASA AJA</h2>
-            <p>Ini adalah website uji coba yang sedang dikembangkan oleh buruhgambar.desain.</p>
-        
-        <section id="contact">
-            <h2>Silahkan Kontak Kami</h2>
-            <p>Whatsapp 085642004955 (Mahen)</p>
-        </section>
-    </main>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 BURUHGAMBAR.DESAIN HEHEHEHE.</p>
-        </div>
-    </footer>
+
+  <header>
+    <h1>Nama Perusahaan</h1>
+    <p>Slogan atau tagline perusahaan Anda</p>
+  </header>
+
+  <nav>
+    <a href="#about">Tentang Kami</a>
+    <a href="#services">Layanan</a>
+    <a href="#contact">Kontak</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Selamat Datang di Perusahaan Kami</h1>
+    <p>Kami memberikan solusi terbaik untuk kebutuhan bisnis Anda</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>Tentang Kami</h2>
+    <p>Kami adalah perusahaan yang bergerak di bidang XYZ dengan pengalaman lebih dari 10 tahun dalam memberikan layanan terbaik kepada klien kami.</p>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Layanan Kami</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Layanan 1</h3>
+        <p>Deskripsi singkat tentang layanan ini.</p>
+      </div>
+      <div class="service-card">
+        <h3>Layanan 2</h3>
+        <p>Deskripsi singkat tentang layanan ini.</p>
+      </div>
+      <div class="service-card">
+        <h3>Layanan 3</h3>
+        <p>Deskripsi singkat tentang layanan ini.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Hubungi Kami</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Nama Anda" required />
+      <input type="email" placeholder="Email Anda" required />
+      <textarea rows="4" placeholder="Pesan Anda"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nama Perusahaan. Semua Hak Dilindungi.</p>
+  </footer>
+
 </body>
 </html>
