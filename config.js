@@ -1,6 +1,6 @@
 // config.js
 const config = {
-  companyName: "Nama Perusahaan Anda",
+  companyName: "BURUH GAMBAR",
   slogan: "Slogan keren di sini",
   heroTitle: "Selamat Datang di Perusahaan Kami",
   heroSubtitle: "Solusi terbaik untuk kebutuhan Anda",
