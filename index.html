@@ -1,156 +1,108 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Nama Perusahaan</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { FaWhatsapp, FaInstagram, FaFacebook, FaXTwitter, FaMapMarkerAlt } from "react-icons/fa";
 
-    header {
-      background-color: #1a1a1a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+export default function CompanyProfile() {
+  const [darkMode, setDarkMode] = useState(false);
 
-    nav {
-      background-color: #333;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-    }
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+  }, [darkMode]);
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+  return (
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen transition-colors">
+      <header className="text-center py-10 bg-gray-100 dark:bg-gray-800 shadow">
+        <h1 className="text-4xl font-bold">Nama Perusahaan</h1>
+        <p className="text-lg mt-2">Solusi Terbaik Untuk Bisnis Anda</p>
+        <button
+          className="mt-4 px-4 py-2 rounded bg-black text-white dark:bg-white dark:text-black"
+          onClick={() => setDarkMode(!darkMode)}
+        >
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+      </header>
 
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: #f4f4f4;
-    }
+      <nav className="flex justify-center gap-6 bg-gray-200 dark:bg-gray-700 py-4">
+        <a href="#about">Tentang</a>
+        <a href="#services">Layanan</a>
+        <a href="#gallery">Galeri</a>
+        <a href="#contact">Kontak</a>
+      </nav>
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
+      <section id="about" className="max-w-4xl mx-auto p-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold mb-4">Tentang Kami</h2>
+          <p>Kami adalah perusahaan profesional yang bergerak di bidang XYZ dengan pengalaman lebih dari satu dekade.</p>
+        </motion.div>
+      </section>
 
-    .section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+      <section id="services" className="bg-gray-50 dark:bg-gray-800 p-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Layanan Kami</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[1, 2, 3].map((num) => (
+              <motion.div
+                key={num}
+                className="bg-white dark:bg-gray-700 p-4 rounded shadow"
+                whileHover={{ scale: 1.05 }}
+              >
+                <h3 className="font-semibold">Layanan {num}</h3>
+                <p className="text-sm">Deskripsi singkat layanan {num}.</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-    .section h2 {
-      margin-bottom: 20px;
-      color: #333;
-    }
+      <section id="gallery" className="p-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Galeri</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {[1, 2, 3, 4, 5, 6].map((img) => (
+              <motion.div key={img} whileHover={{ scale: 1.03 }}>
+                <img
+                  src={`https://picsum.photos/300/200?random=${img}`}
+                  alt={`Galeri ${img}`}
+                  className="rounded shadow"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+      <section id="contact" className="bg-gray-100 dark:bg-gray-800 p-6">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4">Kontak</h2>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1">
+              <p>Hubungi kami melalui:</p>
+              <div className="flex gap-4 mt-4 text-2xl">
+                <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+                <a href="https://instagram.com/namaakun" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+                <a href="https://facebook.com/namaakun" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
+                <a href="https://x.com/namaakun" target="_blank" rel="noopener noreferrer"><FaXTwitter /></a>
+              </div>
+            </div>
+            <div className="flex-1">
+              <iframe
+                className="w-full h-48 rounded"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.1234567890123!2d106.827153315651!3d-6.175392564602279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1b0d3d1234%3A0x123456789abcdef!2sLokasi+Perusahaan!5e0!3m2!1sid!2sid!4v1615975551234"
+                allowFullScreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    .service-card {
-      background: #eaeaea;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .contact-form input, .contact-form textarea {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .contact-form button {
-      padding: 10px;
-      background-color: #1a1a1a;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Nama Perusahaan</h1>
-    <p>Slogan atau tagline perusahaan Anda</p>
-  </header>
-
-  <nav>
-    <a href="#about">Tentang Kami</a>
-    <a href="#services">Layanan</a>
-    <a href="#contact">Kontak</a>
-  </nav>
-
-  <section class="hero">
-    <h1>Selamat Datang di Perusahaan Kami</h1>
-    <p>Kami memberikan solusi terbaik untuk kebutuhan bisnis Anda</p>
-  </section>
-
-  <section id="about" class="section">
-    <h2>Tentang Kami</h2>
-    <p>Kami adalah perusahaan yang bergerak di bidang XYZ dengan pengalaman lebih dari 10 tahun dalam memberikan layanan terbaik kepada klien kami.</p>
-  </section>
-
-  <section id="services" class="section">
-    <h2>Layanan Kami</h2>
-    <div class="services">
-      <div class="service-card">
-        <h3>Layanan 1</h3>
-        <p>Deskripsi singkat tentang layanan ini.</p>
-      </div>
-      <div class="service-card">
-        <h3>Layanan 2</h3>
-        <p>Deskripsi singkat tentang layanan ini.</p>
-      </div>
-      <div class="service-card">
-        <h3>Layanan 3</h3>
-        <p>Deskripsi singkat tentang layanan ini.</p>
-      </div>
+      <footer className="text-center py-6 bg-gray-200 dark:bg-gray-900">
+        <p>&copy; 2025 Nama Perusahaan. Semua Hak Dilindungi.</p>
+      </footer>
     </div>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Hubungi Kami</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Nama Anda" required />
-      <input type="email" placeholder="Email Anda" required />
-      <textarea rows="4" placeholder="Pesan Anda"></textarea>
-      <button type="submit">Kirim</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Nama Perusahaan. Semua Hak Dilindungi.</p>
-  </footer>
-
-</body>
-</html>
+  );
+}
