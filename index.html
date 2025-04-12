@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BURUH GAMBAR</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/@fortawesome/fontawesome-free/js/all.min.js"></script>
+  <style>
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 transition-colors duration-300">
+
+  <!-- Navbar -->
+  <header class="bg-gray-100 shadow dark:bg-gray-800 dark:text-white">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Studio Arsitektur</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="hover:underline">Tentang</a>
+        <a href="#services" class="hover:underline">Layanan</a>
+        <a href="#gallery" class="hover:underline">Galeri</a>
+        <a href="#team" class="hover:underline">Tim</a>
+        <a href="#contact" class="hover:underline">Kontak</a>
+        <button onclick="toggleDarkMode()" class="ml-4 bg-gray-300 px-3 py-1 rounded dark:bg-gray-600">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-cover bg-center fade-in" style="background-image: url('https://source.unsplash.com/1600x600/?architecture');">
+    <h2 class="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">Mewujudkan Desain Impian Anda</h2>
+    <p class="mt-4 text-white text-lg">Desain modern & fungsional dari para profesional</p>
+  </section>
+
+  <!-- Tentang -->
+  <section id="about" class="py-16 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-center">Tentang Kami</h2>
+    <p class="text-center text-lg">Kami adalah studio arsitektur yang berdedikasi pada desain bangunan yang estetis dan fungsional. Dengan tim profesional berpengalaman, kami telah membantu ratusan klien membangun ruang impian mereka.</p>
+  </section>
+
+  <!-- Layanan -->
+  <section id="services" class="bg-gray-100 py-16 px-6 dark:bg-gray-900">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">Layanan Kami</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded shadow dark:bg-gray-800">
+          <i class="fas fa-pencil-ruler text-3xl text-blue-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Desain Arsitektur</h3>
+          <p>Perencanaan desain kreatif dan teknis sesuai kebutuhan Anda.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow dark:bg-gray-800">
+          <i class="fas fa-drafting-compass text-3xl text-green-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Interior Design</h3>
+          <p>Menciptakan ruang dalam yang estetik dan fungsional.</p>
+        </div>
+        <div class="bg-white p-6 rounded shadow dark:bg-gray-800">
+          <i class="fas fa-hard-hat text-3xl text-yellow-500 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Konsultasi & Pengawasan</h3>
+          <p>Memberikan arahan teknis dan pengawasan pembangunan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="gallery" class="py-16 px-6">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">Galeri Proyek</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="https://source.unsplash.com/400x300/?modern-building" class="rounded shadow" />
+        <img src="https://source.unsplash.com/400x300/?interior" class="rounded shadow" />
+        <img src="https://source.unsplash.com/400x300/?home" class="rounded shadow" />
+        <img src="https://source.unsplash.com/400x300/?architecture" class="rounded shadow" />
+        <img src="https://source.unsplash.com/400x300/?villa" class="rounded shadow" />
+        <img src="https://source.unsplash.com/400x300/?construction" class="rounded shadow" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Tim -->
+  <section id="team" class="bg-gray-100 py-16 px-6 dark:bg-gray-900">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-10">Tim Profesional Kami</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div>
+          <img src="https://source.unsplash.com/150x150/?man,architect" class="rounded-full mx-auto mb-3" />
+          <h3 class="font-semibold">Ar. Andi Rahman</h3>
+          <p>Lead Architect</p>
+        </div>
+        <div>
+          <img src="https://source.unsplash.com/150x150/?woman,designer" class="rounded-full mx-auto mb-3" />
+          <h3 class="font-semibold">Ar. Sinta Lestari</h3>
+          <p>Interior Designer</p>
+        </div>
+        <div>
+          <img src="https://source.unsplash.com/150x150/?man,engineer" class="rounded-full mx-auto mb-3" />
+          <h3 class="font-semibold">Ir. Budi Santoso</h3>
+          <p>Site Supervisor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-16 px-6 max-w-4xl mx-auto">
+    <h2 class="text-3xl font-bold mb-6 text-center">Hubungi Kami</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <form class="space-y-4">
+        <input type="text" placeholder="Nama" class="w-full border p-2 rounded" />
+        <input type="email" placeholder="Email" class="w-full border p-2 rounded" />
+        <textarea rows="5" placeholder="Pesan" class="w-full border p-2 rounded"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Kirim</button>
+      </form>
+      <div class="space-y-4">
+        <p><strong>Alamat:</strong> Jl. Arsitektur No.1, Jakarta</p>
+        <div class="flex gap-4 text-xl">
+          <a href="https://wa.me/6281234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/studioarsitektur" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://facebook.com/studioarsitektur" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://x.com/studioarsitek" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+        <iframe class="w-full h-48 rounded" src="https://www.google.com/maps/embed?pb=..." loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-6">
+    <p>&copy; 2025 Studio Arsitektur. Semua hak dilindungi.</p>
+  </footer>
+
+  <!-- Dark Mode Toggle Script -->
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+
+</body>
+</html>
