@@ -9,6 +9,8 @@
     tailwind.config = { darkMode: 'media' };
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <style>
     html { scroll-behavior: smooth; }
     #scrollToTop { display: none; }
@@ -22,39 +24,33 @@
   </style>
 </head>
 <body class="font-sans bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
-  <!-- Tambahan di <head> -->
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script>AOS.init();</script>
 
-  <!-- Header dengan hamburger menu -->
 <header class="fixed w-full bg-white/80 dark:bg-gray-800/80 shadow-md backdrop-blur-sm z-50 transition-colors duration-500">
-  <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
-    <div class="flex items-center space-x-3">
+  <div class="max-w-6xl mx-auto flex items-center justify-between p-4" data-aos="fade-down">
+    <div class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
       <img src="logo.png" alt="Logo" class="h-10 hover:scale-110 transition-transform">
-      <h1 class="text-2xl font-bold hover:text-blue-500 transition-colors">Firma Arsitektur</h1>
+      <h1 class="text-2xl font-bold">Firma Arsitektur</h1>
     </div>
-
-    <!-- Mobile menu toggle -->
     <div class="sm:hidden" x-data="{ open: false }">
       <button @click="open = !open" class="focus:outline-none text-2xl">☰</button>
       <div x-show="open" class="absolute right-4 top-16 bg-white dark:bg-gray-800 shadow-lg rounded-md p-4 flex flex-col space-y-2 w-48 z-50">
-        <a href="#about" class="hover:text-blue-500">Tentang Kami</a>
-        <a href="#team" class="hover:text-blue-500">Tenaga Ahli</a>
-        <a href="#portfolio" class="hover:text-blue-500">Portofolio</a>
-        <a href="#contact" class="hover:text-blue-500">Hubungi Kami</a>
+        <a href="#about" class="hover:text-blue-500 transition-colors">Tentang Kami</a>
+        <a href="#team" class="hover:text-blue-500 transition-colors">Tenaga Ahli</a>
+        <a href="#portfolio" class="hover:text-blue-500 transition-colors">Portofolio</a>
+        <a href="#contact" class="hover:text-blue-500 transition-colors">Hubungi Kami</a>
       </div>
     </div>
-
-    <!-- Desktop nav -->
     <nav class="space-x-6 hidden sm:block">
-      <a href="#about" class="hover:text-blue-500">Tentang Kami</a>
-      <a href="#team" class="hover:text-blue-500">Tenaga Ahli</a>
-      <a href="#portfolio" class="hover:text-blue-500">Portofolio</a>
-      <a href="#contact" class="hover:text-blue-500">Hubungi Kami</a>
+      <a href="#about" class="hover:text-blue-500 transition-colors">Tentang Kami</a>
+      <a href="#team" class="hover:text-blue-500 transition-colors">Tenaga Ahli</a>
+      <a href="#portfolio" class="hover:text-blue-500 transition-colors">Portofolio</a>
+      <a href="#contact" class="hover:text-blue-500 transition-colors">Hubungi Kami</a>
     </nav>
   </div>
 </header>
 
-  <!-- Hero Section -->
 <section class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
   <div class="video-bg w-full h-full">
     <video autoplay muted loop>
@@ -62,89 +58,83 @@
       Browser Anda tidak mendukung video.
     </video>
   </div>
-  <div class="text-white bg-black bg-opacity-60 p-6 sm:p-10 rounded-2xl shadow-xl animate__animated animate__fadeInUp hover:scale-105 transition-transform duration-300 z-10 max-w-2xl">
+  <div class="text-white bg-black bg-opacity-60 p-6 sm:p-10 rounded-2xl shadow-xl animate__animated animate__fadeInUp hover:scale-105 transition-transform duration-300 z-10 max-w-2xl hover:text-blue-300 transition-colors" data-aos="zoom-in">
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">Mewujudkan Desain Arsitektur Impian Anda</h2>
     <p class="text-base sm:text-lg">Profesional. Inovatif. Berpengalaman.</p>
   </div>
 </section>
 
-  <!-- Tentang Kami -->
-  <section id="about" class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-500">
-    <div class="max-w-3xl mx-auto text-center px-4">
-      <h3 class="text-3xl font-semibold mb-6 animate__animated animate__fadeIn">Tentang Kami</h3>
-      <p class="text-gray-700 dark:text-gray-300 animate__animated animate__fadeInUp hover:scale-105 transition-transform duration-300">
-        Kami adalah firma arsitektur dengan pengalaman lebih dari 10 tahun dalam merancang bangunan residensial, komersial, dan publik. Kami mengedepankan inovasi, efisiensi, dan estetika dalam setiap proyek.
-      </p>
-    </div>
-  </section>
+<section id="about" class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-500" data-aos="fade-up">
+  <div class="max-w-3xl mx-auto text-center px-4 hover:text-blue-500 transition-colors">
+    <h3 class="text-3xl font-semibold mb-6">Tentang Kami</h3>
+    <p class="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors">
+      Kami adalah firma arsitektur dengan pengalaman lebih dari 10 tahun dalam merancang bangunan residensial, komersial, dan publik. Kami mengedepankan inovasi, efisiensi, dan estetika dalam setiap proyek.
+    </p>
+  </div>
+</section>
 
- <!-- Tenaga Ahli -->
 <section id="team" class="py-20">
   <div class="max-w-6xl mx-auto text-center px-4">
-    <h3 class="text-3xl sm:text-4xl font-semibold mb-10">Tenaga Ahli Kami</h3>
+    <h3 class="text-3xl sm:text-4xl font-semibold mb-10" data-aos="fade-up">Tenaga Ahli Kami</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl animate__animated animate__fadeInUp hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-          <img src="andi.jpg" alt="Ir. Andi Wijaya" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 hover:scale-105 transition-transform" />
-          <h4 class="text-xl font-semibold">Ir. Andi Wijaya</h4>
-          <p class="text-gray-600 dark:text-gray-300">Arsitek Utama</p>
-        </div>
-        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl animate__animated animate__fadeInUp animate__delay-1s hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-          <img src="rina.jpg" alt="Dr. Rina Kartika" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 hover:scale-105 transition-transform" />
-          <h4 class="text-xl font-semibold">Dr. Rina Kartika</h4>
-          <p class="text-gray-600 dark:text-gray-300">Konsultan Struktur</p>
-        </div>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:text-blue-500 transition-colors" data-aos="fade-right">
+        <img src="andi.jpg" loading="lazy" alt="Ir. Andi Wijaya" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 hover:scale-105 transition-transform" />
+        <h4 class="text-xl font-semibold">Ir. Andi Wijaya</h4>
+        <p class="text-gray-600 dark:text-gray-300">Arsitek Utama</p>
+      </div>
+      <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:text-blue-500 transition-colors" data-aos="fade-left">
+        <img src="rina.jpg" loading="lazy" alt="Dr. Rina Kartika" class="w-40 h-40 object-cover rounded-full mx-auto mb-4 hover:scale-105 transition-transform" />
+        <h4 class="text-xl font-semibold">Dr. Rina Kartika</h4>
+        <p class="text-gray-600 dark:text-gray-300">Konsultan Struktur</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Portofolio -->
-  <section id="portfolio" class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-500">
-    <div class="max-w-6xl mx-auto text-center px-4">
-      <h3 class="text-3xl font-semibold mb-10">Portofolio Proyek</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <img src="project1.jpg" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300" />
-        <img src="project2.jpg" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300" />
-        <img src="project3.jpg" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300" />
-        <img src="project4.jpg" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300" />
-        <img src="project5.jpg" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300" />
-        <img src="project6.jpg" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300" />
-      </div>
+<section id="portfolio" class="py-20 bg-gray-100 dark:bg-gray-800 transition-colors duration-500" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto text-center px-4">
+    <h3 class="text-3xl font-semibold mb-10">Portofolio Proyek</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <img src="project1.jpg" loading="lazy" alt="Proyek 1" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300 hover:brightness-90 transition-colors" />
+      <img src="project2.jpg" loading="lazy" alt="Proyek 2" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300 hover:brightness-90 transition-colors" />
+      <img src="project3.jpg" loading="lazy" alt="Proyek 3" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300 hover:brightness-90 transition-colors" />
+      <img src="project4.jpg" loading="lazy" alt="Proyek 4" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300 hover:brightness-90 transition-colors" />
+      <img src="project5.jpg" loading="lazy" alt="Proyek 5" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300 hover:brightness-90 transition-colors" />
+      <img src="project6.jpg" loading="lazy" alt="Proyek 6" class="rounded-xl shadow-lg w-full h-64 object-cover hover:scale-105 hover:shadow-2xl transition-transform duration-300 hover:brightness-90 transition-colors" />
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Hubungi Kami -->
-  <section id="contact" class="py-20">
-    <div class="max-w-xl mx-auto text-center px-4">
-      <h3 class="text-3xl font-semibold mb-6">Hubungi Kami</h3>
-      <p class="mb-4">Terhubung dengan kami melalui media sosial:</p>
-      <div class="flex justify-center space-x-6 text-3xl">
-        <a href="https://wa.me/628123456789" target="_blank" class="hover:scale-125 transition-transform duration-300 text-green-500">📱</a>
-        <a href="https://instagram.com/namafirma" target="_blank" class="hover:scale-125 transition-transform duration-300 text-pink-500">📷</a>
-        <a href="https://twitter.com/namafirma" target="_blank" class="hover:scale-125 transition-transform duration-300 text-blue-400">🐦</a>
-        <a href="https://facebook.com/namafirma" target="_blank" class="hover:scale-125 transition-transform duration-300 text-blue-600">📘</a>
-      </div>
+<section id="contact" class="py-20" data-aos="fade-up">
+  <div class="max-w-xl mx-auto text-center px-4 hover:text-blue-400 transition-colors">
+    <h3 class="text-3xl font-semibold mb-6">Hubungi Kami</h3>
+    <p class="mb-4">Terhubung dengan kami melalui media sosial:</p>
+    <div class="flex justify-center space-x-6 text-3xl">
+      <a href="https://wa.me/628123456789" target="_blank" class="hover:scale-125 transition-transform duration-300 text-green-500">📱</a>
+      <a href="https://instagram.com/namafirma" target="_blank" class="hover:scale-125 transition-transform duration-300 text-pink-500">📷</a>
+      <a href="https://twitter.com/namafirma" target="_blank" class="hover:scale-125 transition-transform duration-300 text-blue-400">🐦</a>
+      <a href="https://facebook.com/namafirma" target="_blank" class="hover:scale-125 transition-transform duration-300 text-blue-600">📘</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-white dark:bg-black py-6 text-center">
-    <p>&copy; <span id="year"></span> Firma Arsitektur. Hak cipta dilindungi.</p>
-  </footer>
+<footer class="bg-gray-800 text-white dark:bg-black py-6 text-center">
+  <p>&copy; <span id="year"></span> Firma Arsitektur. Hak cipta dilindungi.</p>
+</footer>
 
-  <!-- Scroll to top -->
-  <button id="scrollToTop" onclick="scrollToTop()" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
-    ⬆️
-  </button>
+<button id="scrollToTop" onclick="scrollToTop()" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
+  ⬆️
+</button>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btn = document.getElementById('scrollToTop');
-    window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const btn = document.getElementById('scrollToTop');
+  window.addEventListener('scroll', () => {
+    btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 </body>
 </html>
