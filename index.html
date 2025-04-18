@@ -25,6 +25,8 @@
     .portfolio-card {
       position: relative;
       overflow: hidden;
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease:
     }
     .portfolio-overlay {
       position: absolute;
@@ -38,10 +40,17 @@
       justify-content: center;
       font-weight: bold;
       font-size: 1.25rem;
+      border-radius: 0.5rem:
       transition: opacity 0.3s ease;
     }
     .portfolio-card:hover .portfolio-overlay {
       opacity: 1;
+    }
+    .portfolio-card img {
+      transition: transform 0.3s ease;
+    }
+    .portfolio-card:hover img {
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -96,15 +105,15 @@
   <div class="max-w-6xl mx-auto text-center px-4">
     <h3 class="text-3xl font-semibold mb-10" data-aos="zoom-in">Portofolio Project Buruhgambar</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <a href="portfolio-01.html" class="portfolio-card" data-aos="zoom-in">
+      <a href="portofolio-01.html" class="portfolio-card" data-aos="zoom-in">
         <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744537302/PORTOFOLIO_RENDER-01_lthk11.jpg" alt="Portofolio-1" class="rounded-xl shadow hover:scale-105 transition" />
         <div class="portfolio-overlay">Desain Rumah 2 Lantai</div>
       </a>
-      <a href="portfolio-02.html" class="portfolio-card" data-aos="zoom-in">
+      <a href="portofolio-02.html" class="portfolio-card" data-aos="zoom-in">
         <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744971482/PORTOFOLIO_INTERIOR_MASJID_BAITIL_ATIQ-01_zdouci.jpg" alt="Portofolio-2" class="rounded-xl shadow hover:scale-105 transition" />
         <div class="portfolio-overlay">Interior Masjid</div>
       </a>
-      <a href="portfolio-03.html" class="portfolio-card" data-aos="zoom-in">
+      <a href="portofolio-03.html" class="portfolio-card" data-aos="zoom-in">
         <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744537738/PORTOFOLIO_BURUH_GAMBAR_3D_ISOMETRI-07_ik9wzu.jpg" alt="Portofolio-3" class="rounded-xl shadow hover:scale-105 transition" />
         <div class="portfolio-overlay">Desain Konstruksi Stage dan Rigging</div>
       </a>
