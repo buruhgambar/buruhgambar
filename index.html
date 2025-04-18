@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id" class="">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BURUH GAMBAR</title>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dwejlisif/image/upload/v1744543985/LOGO_BURUH_GAMBAR_2025_2-01_-_Copy_nxqv3f.jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'media' };
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    #scrollToTop { display: none; }
+    .video-bg video {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    #scrollToTop {
+      display: none;
+    }
+
+    .portfolio-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.75rem; /* rounded-xl */
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .portfolio-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(191, 192, 198, 0.5);
+      color: #ffffff;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.25rem;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      border-radius: 0.75rem;
+    }
+
+    .portfolio-card:hover .portfolio-overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script>
+    AOS.init({ once: false });
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Header -->
+  <header class="fixed w-full bg-white/80 dark:bg-gray-800/80 shadow-md backdrop-blur-sm z-50 transition-colors duration-500">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4" data-aos="fade-down">
+      <div class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+        <a href="https://res.cloudinary.com/dwejlisif/image/upload/v1744538459/LOGO_BURUH_GAMBAR_FIX_PNG-02_fbwlfc.png">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744538459/LOGO_BURUH_GAMBAR_FIX_PNG-02_fbwlfc.png" alt="Logo" class="h-10 hover:scale-110 transition-transform">
+        </a>
+        <a href="https://buruhgambar.github.io/buruhgambar/">
+          <h1 class="text-2xl font-bold">BURUH GAMBAR</h1>
+        </a>
+      </div>
+      <div class="sm:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="focus:outline-none text-2xl">☰</button>
+        <div x-show="open" class="absolute right-4 top-16 bg-white dark:bg-gray-800 shadow-lg rounded-md p-4 flex flex-col space-y-2 w-48 z-50">
+          <a href="#about" class="hover:text-blue-500 transition-colors">Tentang Kami</a>
+          <a href="#team" class="hover:text-blue-500 transition-colors">Tenaga Profesional</a>
+          <a href="#portfolio" class="hover:text-blue-500 transition-colors">Portofolio</a>
+          <a href="#contact" class="hover:text-blue-500 transition-colors">Hubungi Kami</a>
+        </div>
+      </div>
+      <nav class="space-x-6 hidden sm:block">
+        <a href="#about" class="hover:text-blue-500 transition-colors">Tentang Kami</a>
+        <a href="#team" class="hover:text-blue-500 transition-colors">Tenaga Profesional</a>
+        <a href="#portfolio" class="hover:text-blue-500 transition-colors">Portofolio</a>
+        <a href="#contact" class="hover:text-blue-500 transition-colors">Hubungi Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+    <div class="video-bg w-full h-full">
+      <video autoplay muted loop>
+        <source src="https://res.cloudinary.com/dwejlisif/video/upload/v1744538354/VIDEO_lvp3pt.mp4" type="video/mp4" />
+        Browser Anda tidak mendukung video.
+      </video>
+    </div>
+    <div class="text-white bg-black bg-opacity-60 p-6 sm:p-10 rounded-2xl shadow-xl animate__animated animate__fadeInUp hover:scale-105 transition-transform duration-300 z-10 max-w-2xl hover:text-blue-300 transition-colors" data-aos="zoom-in">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Desain konstruksi CAD & 3D Model</h2>
+      <p class="text-base sm:text-lg">Profesional. Inovatif. Berpengalaman.</p>
+    </div>
+  </section>
+
+  <!-- Portofolio -->
+  <section id="portfolio" class="py-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 transition-colors duration-500">
+    <div class="max-w-6xl mx-auto text-center px-4">
+      <h3 class="text-3xl font-semibold mb-10" data-aos="zoom-in">Portofolio Buruh Gambar</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="portofolio-01.html" class="portfolio-card" data-aos="zoom-in">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744537302/PORTOFOLIO_RENDER-01_lthk11.jpg" alt="Portofolio-1" class="shadow transition" />
+          <div class="portfolio-overlay">Desain Rumah 2 Lantai</div>
+        </a>
+        <a href="portofolio-02.html" class="portfolio-card" data-aos="zoom-in">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744971482/PORTOFOLIO_INTERIOR_MASJID_BAITIL_ATIQ-01_zdouci.jpg" alt="Portofolio-2" class="shadow transition" />
+          <div class="portfolio-overlay">Desain Interior Masjid</div>
+        </a>
+        <a href="portofolio-03.html" class="portfolio-card" data-aos="zoom-in">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744537738/PORTOFOLIO_BURUH_GAMBAR_3D_ISOMETRI-07_ik9wzu.jpg" alt="Portofolio-3" class="shadow transition" />
+          <div class="portfolio-overlay">Desain Konstruksi Stage dan Rigging</div>
+        </a>
+        <a href="portofolio-04.html" class="portfolio-card" data-aos="zoom-in">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744540558/PORTOFOLIO_BURUH_GAMBAR-01_ue0ere.jpg" alt="portofolio-4" class="shadow transition" />
+          <div class="portfolio-overlay">Desain Homedecor Booth</div>
+        </a>
+        <a href="portofolio-05.html" class="portfolio-card" data-aos="zoom-in">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744981204/PORTOFOLIO_BURUH_GAMBAR_AL-AZHAR-04_is7z3k.jpg" alt="portofolio-5" class="shadow transition" />
+          <div class="portfolio-overlay">Desain Tata Ruang Sekolah</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tentang Kami -->
+  <section id="about" class="py-20 bg-gradient-to-tr from-white to-blue-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-500">
+    <div class="max-w-3xl mx-auto text-center px-4 hover:text-blue-500 transition-colors" data-aos="zoom-in">
+      <h3 class="text-3xl font-semibold mb-6">Tentang Kami</h3>
+      <p class="text-gray-700 dark:text-gray-300 hover:text-blue-400 transition-colors">
+        Kami adalah konsultan perencana di bidang desain konstruksi rumah tinggal, arsitektur dan event konser. Kami melayani pembuatan gambar 3D, gambar kerja (DED), perhitungan struktur gedung, dan perhitungan RAB.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tenaga Profesional -->
+  <section id="team" class="py-20 bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900">
+    <div class="max-w-6xl mx-auto text-center px-4">
+      <h3 class="text-3xl sm:text-4xl font-semibold mb-10" data-aos="zoom-in">Tenaga Profesional Kami</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:text-blue-500 transition-colors" data-aos="zoom-in">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744539270/PAS_FOTO_MAHENDRA_YUSUF_WISNU_W_WARNA_mhkvib.jpg" alt="Mahendra Yusuf Wisnu Wardana, S.T." class="w-40 h-40 object-cover rounded-full mx-auto mb-4 hover:scale-105 transition-transform" />
+          <h4 class="text-xl font-semibold">Mahendra Yusuf Wisnu Wardana, S.T.</h4>
+          <p class="text-gray-600 dark:text-gray-300">Team Leader</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 hover:text-blue-500 transition-colors" data-aos="zoom-in">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744702240/WhatsApp_Image_2025-04-15_at_09.41.16_26bcd176_ihizug.jpg" alt="Bima Sakti, S.T." class="w-40 h-40 object-cover rounded-full mx-auto mb-4 hover:scale-105 transition-transform" />
+          <h4 class="text-xl font-semibold">Bima Sakti, S.T.</h4>
+          <p class="text-gray-600 dark:text-gray-300">Drafter CAD & 3D Model</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="py-20 bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800" data-aos="zoom-in">
+    <div class="max-w-xl mx-auto text-center px-4 hover:text-blue-400 transition-colors">
+      <h3 class="text-3xl font-semibold mb-6">Hubungi Kami</h3>
+      <p class="mb-4">Silakan menghubungi kami melalui media sosial:</p>
+      <div class="flex justify-center space-x-6 text-3xl">
+        <a href="https://wa.me/6285642004955" class="hover:scale-125 transition-transform text-green-500"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://instagram.com/buruhgambar.desain" class="hover:scale-125 transition-transform text-pink-500"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/mahenwrdhna" class="hover:scale-125 transition-transform text-blue-400"><i class="fab fa-twitter"></i></a>
+        <a href="https://facebook.com/mahenwrdhna" class="hover:scale-125 transition-transform text-blue-600"><i class="fab fa-facebook"></i></a>
+        <a href="https://tiktok.com/@mahenwrdhna" class="hover:scale-125 transition-transform text-cyan-500"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white dark:bg-black py-6 text-center">
+    <p>&copy; <span id="year"></span> Buruh Gambar. Hak cipta dilindungi.</p>
+  </footer>
+
+  <!-- Scroll Top -->
+  <button id="scrollToTop" onclick="scrollToTop()" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
+    Naik ya!
+  </button>
+
+  <!-- Script -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+
+</html>
