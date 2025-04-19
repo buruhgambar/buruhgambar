@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Desain Interior Masjid - Buruh Gambar</title>
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dwejlisif/image/upload/v1744971482/PORTOFOLIO_INTERIOR_MASJID_BAITIL_ATIQ-01_zdouci.jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
+
+  <div class="p-6 max-w-4xl mx-auto">
+    <!-- Link Kembali dengan animasi -->
+    <a href="https://buruhgambar.github.io/buruhgambar/#portfolio" class="text-blue-500 hover:underline mb-6 inline-block" data-aos="zoom-in" data-aos-delay="100">
+      &larr; Kembali ke Portofolio
+    </a>
+    <h1 class="text-3xl font-bold mb-4" data-aos="zoom-in" data-aos-delay="200">Rehabilitasi Plafond Interior Masjid</h1>
+    <p class="text-lg leading-relaxed mb-6" data-aos="zoom-in" data-aos-delay="300">Penggantian plafond masjid material PVC dengan luas 361 meter persegi.</p>
+    <!-- Gambar Proyek -->
+    <div class="space-y-6">
+      <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744971482/PORTOFOLIO_INTERIOR_MASJID_BAITIL_ATIQ-01_zdouci.jpg" alt="Interior Masjid Baitil Atiq" class="rounded-xl mb-6 shadow-xl w-full" data-aos="zoom-in" data-aos-delay="500">
+      <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744971462/PORTOFOLIO_INTERIOR_MASJID_BAITIL_ATIQ-02_ogeipt.jpg" alt="Interior Masjid Baitil Atiq" class="rounded-xl mb-6 shadow-xl w-full" data-aos="zoom-in" data-aos-delay="500">
+      <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744540492/PORTOFOLIO_INTERIOR_MASJID_BAITIL_ATIQ-03_ezlsgb.jpg" alt="Interior Masjid Baitil Atiq" class="rounded-xl mb-6 shadow-xl w-full" data-aos="zoom-in" data-aos-delay="500">
+    </div>
+
+    <!-- Galeri Mini Proyek Lainnya -->
+    <div class="mt-16 border-t border-gray-300 dark:border-gray-700 pt-10">
+      <h2 class="text-2xl font-bold mb-10" data-aos="zoom-in" data-aos-delay="500">Portofolio Lainnya</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <a href="portofolio-01.html" class="block group" data-aos="zoom-in" data-aos-delay="500">
+          <div class="overflow-hidden rounded-xl shadow-lg">
+            <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744537302/PORTOFOLIO_RENDER-01_lthk11.jpg" alt="Portofolio 1"
+                 class="w-full h-auto transform group-hover:scale-105 transition duration-300">
+          </div>
+          <p class="mt-2 text-center font-medium text-gray-700 dark:text-gray-300">Pembangunan Rumah 2 Lantai</p>
+        </a>
+        <a href="portofolio-03.html" class="block group" data-aos="zoom-in" data-aos-delay="500">
+          <div class="overflow-hidden rounded-xl shadow-lg">
+            <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744537738/PORTOFOLIO_BURUH_GAMBAR_3D_ISOMETRI-07_ik9wzu.jpg" alt="Portofolio 3"
+                 class="w-full h-auto transform group-hover:scale-105 transition duration-300">
+          </div>
+          <p class="mt-2 text-center font-medium text-gray-700 dark:text-gray-300">Desain Konstruksi Stage dan Rigging</p>
+        </a>
+        <a href="portofolio-04.html" class="block group" data-aos="zoom-in" data-aos-delay="500">
+          <div class="overflow-hidden rounded-xl shadow-lg">
+            <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744540558/PORTOFOLIO_BURUH_GAMBAR-01_ue0ere.jpg" alt="Portofolio 4"
+                 class="w-full h-auto transform group-hover:scale-105 transition duration-300">
+          </div>
+          <p class="mt-2 text-center font-medium text-gray-700 dark:text-gray-300">Desain Homedecor Booth</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Scroll Top -->
+  <button id="scrollToTop" onclick="scrollToTop()" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
+    Naik ya!
+  </button>
+
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000, // Durasi animasi (ms)
+      once: false // Animasi muncul setiap kali elemen masuk viewport
+    });
+    const btn = document.getElementById('scrollToTop');
+    window.addEventListener('scroll', () => {
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
