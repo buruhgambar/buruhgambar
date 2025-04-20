@@ -242,7 +242,21 @@
   
       </div>
     </div>
-  </section>    
+  </section> 
+  
+  <!-- Kolom Kritik dan Saran -->
+  <div class="max-w-xl mx-auto my-10 p-6 bg-white dark:bg-gray-800 rounded-xl shadow" data-aos="zoom-in">
+    <h2 class="text-xl font-bold mb-4">💬 Kritik dan Saran</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+      Berikan kritik dan saranmu untuk website, sosial media, serta pelayanan dari Buruh Gambar dengan cara mengisi nama kamu dan kritik saranmu dikolom bawah ini ya, trimakasih. 😊
+    </p>
+    <div id="message-box" class="space-y-2 max-h-60 overflow-y-auto mb-4 p-2 border rounded bg-gray-100 dark:bg-gray-700 text-sm"></div>
+    <form id="chat-form" class="flex flex-col md:flex-row gap-2">
+      <input type="text" id="username" placeholder="Nama kamu" class="flex-1 p-2 rounded border text-black" />
+      <input type="text" id="message" placeholder="Kritik dan saran kamu untuk buruhgambar..." class="flex-1 p-2 rounded border text-black" required />
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">Kirim</button>
+    </form>
+  </div>
 
   <!-- Kontak -->
   <section id="contact" class="py-20 bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800" data-aos="slide-left">
@@ -265,37 +279,87 @@
   </footer>
 
   <!-- Scroll Top -->
-  <button id="scrollToTop" onclick="scrollToTop()" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform">
+  <button id="scrollToTop" onclick="scrollToTop()" class="hidden fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:scale-110 transition-transform z-50 pointer-events-auto">
     Naik ya!
   </button>
 
   <!-- Script -->
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    const btn = document.getElementById('scrollToTop');
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+    // Konfigurasi Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyBNhxKSeF3PXWUDi3HAGERHeBxJlYJdzgQ",
+      authDomain: "buruhgambar-404cb.firebaseapp.com",
+      databaseURL: "https://buruhgambar-404cb-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "buruhgambar-404cb",
+      storageBucket: "buruhgambar-404cb.firebasestorage.app",
+      messagingSenderId: "565465787537",
+      appId: "1:565465787537:web:9af1f2130b61839547a330",
+      measurementId: "G-FP3FYPQBX0"
+    };
+
+    // Inisialisasi Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    // Kirim pesan
+    const sendMessage = (user, text) => {
+      push(ref(db, 'messages'), {
+        user,
+        text,
+        timestamp: Date.now()
+      });
+    };
+
+    // Tampilkan pesan realtime
+    const messageBox = document.getElementById("message-box");
+    onChildAdded(ref(db, 'messages'), (snapshot) => {
+      const msg = snapshot.val();
+      const el = document.createElement("div");
+      el.innerHTML = `<span class="font-semibold">${msg.user || "Anonim"}:</span> ${msg.text}`;
+      messageBox.appendChild(el);
+      messageBox.scrollTop = messageBox.scrollHeight; // auto-scroll
+    });
+
+    // Form kirim chat
+    document.getElementById("chat-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const user = document.getElementById("username").value || "Anonim";
+      const text = document.getElementById("message").value;
+      if (text.trim()) {
+        sendMessage(user, text);
+        document.getElementById("message").value = "";
+      }
+    });
+
+    // Scroll to Top button logic
     window.addEventListener('scroll', () => {
-      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      const btn = document.getElementById('scrollToTop');
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';  // Tombol muncul setelah scroll 300px
     });
 
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // Slide group (jika kamu membutuhkan fitur slideshow)
     const slideGroups = document.querySelectorAll('.relative.aspect-square');
+    slideGroups.forEach(group => {
+      const images = group.querySelectorAll('.slide-img');
+      let current = 0;
 
-  slideGroups.forEach(group => {
-    const images = group.querySelectorAll('.slide-img');
-    let current = 0;
+      setInterval(() => {
+        images[current].classList.remove('opacity-100');
+        images[current].classList.add('opacity-0');
 
-    setInterval(() => {
-      images[current].classList.remove('opacity-100');
-      images[current].classList.add('opacity-0');
+        current = (current + 1) % images.length;
 
-      current = (current + 1) % images.length;
-
-      images[current].classList.remove('opacity-0');
-      images[current].classList.add('opacity-100');
-    }, 4000); // Ganti durasi sesuai keinginan
-  });
+        images[current].classList.remove('opacity-0');
+        images[current].classList.add('opacity-100');
+      }, 4000); // Ganti durasi sesuai keinginan
+    });
   </script>
 </body>
 </html>
