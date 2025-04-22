@@ -10,11 +10,41 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </head>
+
 <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
 
-  <div class="p-6 max-w-4xl mx-auto">
+  <!-- Header -->
+  <header class="fixed w-full bg-white/80 dark:bg-gray-800/80 shadow-md backdrop-blur-sm z-50 transition-colors duration-500">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4" data-aos="fade-down">
+      <div class="flex items-center space-x-3 hover:text-blue-500 transition-colors">
+        <a href="https://res.cloudinary.com/dwejlisif/image/upload/v1744538459/LOGO_BURUH_GAMBAR_FIX_PNG-02_fbwlfc.png">
+          <img src="https://res.cloudinary.com/dwejlisif/image/upload/v1744538459/LOGO_BURUH_GAMBAR_FIX_PNG-02_fbwlfc.png" alt="Logo" class="h-10 hover:scale-110 transition-transform">
+        </a>
+        <a href="https://buruhgambar.github.io/buruhgambar/">
+          <h1 class="text-2xl font-bold">BURUH GAMBAR</h1>
+        </a>
+      </div>
+      <div class="sm:hidden" x-data="{ open: false }">
+        <button @click="open = !open" class="focus:outline-none text-2xl">☰</button>
+        <div x-show="open" class="absolute right-4 top-16 bg-white dark:bg-gray-800 shadow-lg rounded-md p-4 flex flex-col space-y-2 w-48 z-50">
+          <a href="#portfolio" class="hover:text-blue-500 transition-colors">Portofolio</a>
+          <a href="#about" class="hover:text-blue-500 transition-colors">Tentang Kami</a>
+          <a href="#team" class="hover:text-blue-500 transition-colors">Tenaga Profesional</a>
+          <a href="#contact" class="hover:text-blue-500 transition-colors">Hubungi Kami</a>
+        </div>
+      </div>
+      <nav class="space-x-6 hidden sm:block">
+        <a href="#portfolio" class="hover:text-blue-500 transition-colors">Portofolio</a>
+        <a href="#about" class="hover:text-blue-500 transition-colors">Tentang Kami</a>
+        <a href="#team" class="hover:text-blue-500 transition-colors">Tenaga Profesional</a>
+        <a href="#contact" class="hover:text-blue-500 transition-colors">Hubungi Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="p-6 max-w-4xl mx-auto">
     <!-- Link Kembali -->
-    <a href="https://buruhgambar.github.io/buruhgambar/#portfolio" class="max-w-4xl text-blue-500 hover:underline mb-6 inline-block" data-aos="zoom-in" data-aos-delay="100">
+    <a href="https://buruhgambar.github.io/buruhgambar/#portfolio" class="pt-20 max-w-4xl text-blue-500 hover:underline mb-6 inline-block" data-aos="zoom-in" data-aos-delay="100">
       &larr; Kembali ke Portofolio
     </a>
     <h1 class="max-w-6xl text-3xl font-bold mb-4" data-aos="zoom-in" data-aos-delay="200">Rumah Tinggal 2 Lantai di Banjarbaru</h1>
@@ -57,7 +87,7 @@
         </a>
       </div>
     </div>
-  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-gradient-to-br from-blue-50 to-white dark:from-gray-800 dark:to-gray-900 py-6 text-center">
@@ -83,6 +113,9 @@
     function scrollToTop() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+  </script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.0/dist/cdn.min.js">
   </script>
 
 </body>
